@@ -1,5 +1,6 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function Resume({ period, department, institute, para }) {
   const experiences = [
     {
@@ -29,18 +30,19 @@ export default function Resume({ period, department, institute, para }) {
       technologies: ["ASP.NET Web API", "React", "Bootstrap", "Git"],
     },
   ];
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      disable: "phone",
+      duration: 700,
+      easing: "ease-out-cubic",
+    });
+  }, []);
   return (
     <>
-      {/* <div className='tw-flex tw-flex-col tw-mx-auto tw-p-10 tw-box-content tw-w-96 tw-rounded-lg tw-gap-3 tw-bg-stone-400'>
-            <h4>{period}</h4>
-            <h4>{department} </h4>
-            <h6>{institute}</h6>
-            <p>{para} </p>
-
-        </div> */}
-
       <div>
-        <section className="tw-py-8 tw-bg-gray-100">
+        <section data-aos="zoom-in-right" className="tw-py-8  tw-bg-gray-100">
           <h2 className="tw-text-center tw-text-3xl tw-font-bold tw-text-gray-800 tw-mb-8">
             Work Experience
           </h2>

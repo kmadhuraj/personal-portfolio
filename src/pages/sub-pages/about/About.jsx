@@ -1,22 +1,18 @@
 import React from "react";
 import me from "../../../assets/images/m2.jfif";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-// import { useEffect } from "react";
+import Button from "../../../common/button/Button";
+
 export default function About() {
-  
-  
   return (
     <>
       <div
+        id="about"
         className="tw-flex  tw-flex-col md:tw-flex-row tw-gap-36 tw-items-center tw-m-20"
-        
       >
         <img
           className="md:w-25 tw-w-72  tw-rounded-3xl md:tw-rounded-full"
           src={me}
           alt=""
-       
         />
 
         <div className="tw-flex tw-flex-col">
@@ -47,7 +43,7 @@ export default function About() {
             <h6 className="tw-text-lg">Phone:</h6>
             <p className="tw-text-lg">9539163693</p>
           </span>
-          <button>Download Cv</button>
+          <Button>Download Cv</Button>
         </div>
       </div>
     </>
