@@ -3,9 +3,19 @@ import me from "../../../assets/images/m2.jfif";
 import Button from "../../../common/button/Button";
 
 export default function About() {
+  const onButtonClick = () => {
+    const pdfUrl = "src/assets/resume/Madhuraj K_Resume.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "Madhuraj_resume.pdf"; // specify the filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <>
       <div
+        style={{ backgroundColor: "" }}
         id="about"
         className="tw-flex  tw-flex-col md:tw-flex-row tw-gap-36 tw-items-center tw-m-20"
       >
@@ -14,7 +24,6 @@ export default function About() {
           src={me}
           alt=""
         />
-
         <div className="tw-flex tw-flex-col">
           <h3>About me</h3>
           <p className="tw-font-normal tw-text-xl">
@@ -43,7 +52,7 @@ export default function About() {
             <h6 className="tw-text-lg">Phone:</h6>
             <p className="tw-text-lg">9539163693</p>
           </span>
-          <Button>Download Cv</Button>
+          <Button onClick={onButtonClick}>Download Cv</Button>
         </div>
       </div>
     </>

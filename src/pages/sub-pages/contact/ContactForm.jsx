@@ -1,8 +1,17 @@
 import React from "react";
-import { useState,useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Button from "../../../common/button/Button";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faGithub,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import StyledButton from "../../../common/StyledButton";
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -10,6 +19,11 @@ export default function ContactForm() {
     message: "",
   });
 
+  const data = {
+    Name: formData.name,
+    Email: formData.email,
+    Message: formData.message,
+  };
   useEffect(() => {
     AOS.init({
       once: true,
@@ -19,6 +33,26 @@ export default function ContactForm() {
     });
   }, []);
 
+  const SocialArray = [
+    {
+      Icon: faInstagram,
+      Name: "Instagram",
+      Link: "https://www.instagram.com/itsmemk___/",
+    },
+    {
+      Icon: faLinkedin,
+      Name: "Linked In",
+      Link: "https://www.linkedin.com/in/madhuraj-k-96aa8b218/",
+    },
+    {
+      Icon: faGithub,
+      Name: "GitHub",
+      Link: "https://github.com/kmadhuraj",
+    },
+  ];
+  const [SuccesMsg, SetSuccesMessage] = useState("");
+  const [timer, setTimer] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -26,67 +60,92 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Thank you, ${formData.name}! Your message has been sent.`);
+    // alert(`Thank you, ${formData.name}! Your message has been sent.`);
     // Add form submission logic here
-    setFormData({ name: "", email: "", message: "" });
+
+    axios.post(
+      "https://api.sheetbest.com/sheets/5c0e674e-b45b-4db4-ae00-c67135b4ffbe",
+      data
+    );
+    SetSuccesMessage("Message Sent Successfully");
+    setTimer(true);
+    setTimeout(() => setTimer(false), 3000);
   };
+
   return (
     <>
-      <section
-        data-aos="zoom-in-right"
-        className="tw-py-12 tw-bg-gray-100"
-        id="contact"
-      >
-        <div className="container  tw-mx-auto px-5 max-w-lg">
-          <h2 className="text-3xl font-bold text-center mb-8">Contact Me</h2>
+      <section data-aos="zoom-in-right" className="tw-py-12 "  id="contact">
+       
+        <div className="  tw-mx-auto px-5 max-w-lg">
+          <h2 className="mb-8">I Love to here from you.</h2>
+          <p>Connect with Me Today. Let's Create Something Amazing Together!</p>
+       
+          <div className="tw-flex tw-gap-5"> 
           <form
+            // ref={form}
+            style={{ width: "400px" }}
             onSubmit={handleSubmit}
-            className=" shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            className="shadow-md rounded  px-8 pt-6 pb-8 mb-4"
           >
-            <div className="mb-4 w-100">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Name"
-                className="shadow appearance-none border rounded w-100  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                required
-              />
+            <div className="tw-flex tw-gap-5">
+              <div className="mb-4 w-50">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Name *"
+                  className="shadow appearance-none border rounded w-100  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  required
+                />
+              </div>
+              <div className="mb-4 w-50">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  placeholder="Email *"
+                  onChange={handleChange}
+                  className="shadow appearance-none border w-100 rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  required
+                />
+              </div>
             </div>
-            <div className="mb-4 w-100">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                placeholder="Email"
-                onChange={handleChange}
-                className="shadow appearance-none border w-100 rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                required
-              />
-            </div>
-            <div className="mb-6 w-100">
+            <div className="mb-6 w-100 ">
               <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 placeholder="Message"
                 onChange={handleChange}
-                className="shadow appearance-none w-100 border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none w-100 tw-h-24 border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 required
               />
             </div>
-            <div className=" tw-mt-6 tw-flex tw-items-center tw-justify-center">
+            <div className=" tw-mt-5 tw-flex w-100 tw-items-center tw-justify-start ">
               <Button
                 type="submit"
-                className="tw-bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="tw-bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               >
                 Send Message
               </Button>
             </div>
+
+            {timer && (
+              <p className="tw-text-lg text-success text-center mt-4">
+                {SuccesMsg}
+                {}
+              </p>
+            )}
           </form>
+          <div className="tw-flex tw-flex-col tw-gap-5 tw-mb-5">
+            {SocialArray.map((social, i) => (
+              <StyledButton key={i} data={social}></StyledButton>
+            ))}
+          </div>
+          </div>
         </div>
       </section>
     </>

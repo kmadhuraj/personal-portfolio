@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ults from "../../../assets/images/ults.png";
+import brq from "../../../assets/images/brq.png";
 export default function Resume({ period, department, institute, para }) {
   const experiences = [
     {
@@ -15,10 +17,11 @@ export default function Resume({ period, department, institute, para }) {
         "Collaborated with cross-functional teams to design new features.",
       ],
       technologies: ["React", "ASP.NET Core", "Azure DevOps", "Git"],
+      image: ults,
     },
     {
       jobTitle: "Intern",
-      company: "Tech Innovations Ltd.",
+      company: "BRQ Glob Tech Pvt Ltd.",
       date: "June 2022 - Dec 2022",
       roleDescription:
         "Assisted in the development of RESTful APIs and frontend interfaces.",
@@ -28,6 +31,7 @@ export default function Resume({ period, department, institute, para }) {
         "Performed code reviews and tested applications for bugs.",
       ],
       technologies: ["ASP.NET Web API", "React", "Bootstrap", "Git"],
+      image: brq,
     },
   ];
 
@@ -41,41 +45,40 @@ export default function Resume({ period, department, institute, para }) {
   }, []);
   return (
     <>
-      <div>
-        <section data-aos="zoom-in-right" className="tw-py-8  tw-bg-gray-100">
-          <h2 className="tw-text-center tw-text-3xl tw-font-bold tw-text-gray-800 tw-mb-8">
-            Work Experience
-          </h2>
-          <div className="tw-flex tw-flex-wrap tw-gap-6 tw-justify-center">
-            {experiences.map((experience, index) => (
-              <div
-                className="tw-w-72 tw-bg-white tw-p-6 tw-rounded-lg tw-shadow-md"
-                key={index}
-              >
-                <h3 className="tw-text-lg tw-font-bold tw-text-blue-600">
-                  {experience.jobTitle}
-                </h3>
-                <h4 className="tw-text-sm tw-font-semibold tw-text-gray-600">
-                  {experience.company} |{" "}
-                  <span className="tw-text-xs tw-text-gray-500">
-                    {experience.date}
-                  </span>
-                </h4>
-                <p className="tw-my-4 tw-text-gray-700">
-                  {experience.roleDescription}
-                </p>
-                <ul className="tw-list-disc tw-pl-5 tw-space-y-1 tw-text-gray-600">
-                  {experience.responsibilities.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-                <div className="tw-mt-4 tw-text-sm tw-text-gray-800">
-                  <strong>Technologies:</strong>{" "}
-                  {experience.technologies.join(", ")}
+      <div  >
+        <section data-aos="zoom-in-right" className="tw-py-8  ">
+          {experiences.map((experience, index) => (
+            //this is the experience card -- start
+
+            <div
+              key={index}
+              style={{ backgroundColor: "#0a0a0b" }}
+              className="tw-flex tw-flex-col tw-p-6 tw-text-zinc-200 tw-gap-6 tw-mb-6  tw-rounded-lg"
+            >
+              <div className="tw-flex tw-items-center tw-justify-between">
+                <div className="tw-flex tw-gap-3 tw-items-center">
+                  <img
+                    className="tw-w-10 tw-h-10 tw-rounded-xl"
+                    src={experience.image}
+                    alt="company-img"
+                  />
+                  <p>{experience.company}</p>
                 </div>
+
+                <p>{experience.date}</p>
               </div>
-            ))}
-          </div>
+
+              <div
+                style={{ width: "700px" }}
+                className="tw-flex tw-bg-black tw-flex-col  tw-justify-center tw-text-zinc-200 tw-h-auto tw-rounded-md tw-p-5"
+              >
+
+                <h5 className="">{experience.jobTitle}</h5>
+                <p className="">{experience.responsibilities}</p>
+              </div>
+            </div>
+          ))}
+          {/* end */}
         </section>
       </div>
     </>

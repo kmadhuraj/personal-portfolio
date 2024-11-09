@@ -1,17 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "../App.css";
 import Navbar from "../header/MyNavbar";
 import About from "./sub-pages/about/About";
 import Resume from "./sub-pages/resume/Resume";
-import Skills from "./sub-pages/skills/Skills";
 import ProjectSection from "./sub-pages/projects/ProjectSection";
 import ContactForm from "./sub-pages/contact/ContactForm";
+import Skills from "./sub-pages/skills/Skills";
 import Footer from "../footer/Footer";
 import { TypeAnimation } from "react-type-animation";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Button from "../common/button/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faGithub,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+//images for skills
+import dotnet from "../assets/images/aspdotnet.png";
+import react from "../assets/images/reactpng.png";
+import csharp from "../assets/images/c-sharp.png";
+import js from "../assets/images/javascript-1.svg";
+import git from "../assets/images/Git.png";
+import tailwind from "../assets/images/Tailwind.png";
+import bootstrap from "../assets/images/bootstrap-icons.png";
+// import GoogleFontLoader from 'react-google-fonts';
 export default function HomePage() {
+  //useref is used to access the project section
+  const sectionRef = useRef(null);
+
+  // const navigate = useNavigate();
   useEffect(() => {
     AOS.init({
       once: true,
@@ -23,118 +42,140 @@ export default function HomePage() {
 
   const SkillsArray = [
     {
-      frontEnd: ["React.Js", "Tailwind CSS", "Bootstrap"],
-      backEnd: ["ASP .Net Core", "ASP .Net Web API", "ASP .Net MVC"],
+      skill: "ASP.NET Core",
+      symbol: dotnet,
+    },
+    {
+      skill: "React.js",
+      symbol: react,
+    },
+    {
+      skill: "C#",
+      symbol: csharp,
+    },
+    {
+      skill: "Javascript",
+      symbol: js,
+    },
+    {
+      skill: "Tailwind CSS",
+      symbol: tailwind,
+    },
+    {
+      skill: "Bootstrap",
+      symbol: bootstrap,
+    },
+    {
+      skill: "Git",
+      symbol: git,
     },
   ];
+
+  const handleButtonNavigate = () => {
+    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <Navbar></Navbar>
-      <div  id="home" className=" tw-flex tw-flex-col  md:tw-flex-row tw-items-center lg:tw-gap-72 tw-bg-gray-800 tw-p-20 tw-gap-20 md:tw-justify-evenly  md:tw-items-center">
-        <div className="tw-flex tw-items-center tw-flex-col md:tw-items-start tw-text-white">
-          <p className="tw-text-lg fw-light text-uppercase">Hi There!</p>
+      <div
+        style={{
+          backgroundColor: "#0f0f0f",
+          fontFamily: "Space Grotesk,serif",
+          fontWeight: "500",
+        }}
+        className="tw-text-zinc-200 tw-flex tw-flex-col tw-items-center tw-gap-20 "
+      >
+        <div className="tw-flex tw-justify-center tw-p-10">
+          <div
+            id="home"
+            className=" tw-flex tw-flex-col  bg- md:tw-flex-row tw-items-center  md:tw-justify-evenly  md:tw-items-center"
+          >
+            <div className="tw-flex tw-items-center tw-flex-col tw-w-96  md:tw-items-start tw-text-zinc-200">
+              <p className="tw-text-lg fw-light text-uppercase">Hi There!</p>
 
-          {/* animation typing  */}
-          <h3 className="tw-text-4xl w-100 fw-bold text-uppercase">
-           
-            MADHURAJ K
-          </h3>
+              {/* animation typing  */}
+              <div className="">
+                <h3 className="tw-text-2xl w-100 fw-bold text-uppercase">
+                  MADHURAJ K
+                </h3>
+                <p>
+                  Enthusiastic software engineer with over a year of experience
+                  in ASP.NET Core and React.js. Skilled in developing
+                  user-friendly web applications with a focus on performance and
+                  a seamless user experience.
+                </p>
+              </div>
 
-          <h3 className="tw-text-xl fw-medium text-uppercase">
-            
-            <TypeAnimation
-              sequence={["Web Developer"]}
-              speed={500}
-              style={{display: "inline-block" }}
-              
-            />
-          </h3>
-          <Button> My Works</Button>
-          {/* <button className="tw-w-32"> My works </button> */}
-        </div>
-
-        <img
-          className="md:w-25 tw-w-72 tw-rounded-3xl md:tw-rounded-full"
-          src="\src\assets\images\me.jfif"
-          alt="my photo"
-        />
-      </div>
-
-      {/* about section */}
-      <div data-aos="zoom-in-right">
-        <About />
-      </div>
-
-      {/* resume section */}
-
-      <div className="tw-flex tw-flex-col  tw-p-10 bg-body-secondary">
-        <h3 className="tw-font-semibold tw-mx-auto">Resume</h3>
-        <div className="tw-flex md:tw-flex-wrap tw-justify-center tw-gap-20 flex-wrap tw-p-20 bg-body-secondary">
-          <Resume
-            period="2017-2020"
-            department="Computer Engineering"
-            institute="Government Polytechnic College,kasaragod"
-            para="Completed diploma in Computer Engineering"
-          ></Resume>
-        </div>
-
-        <span className="tw-mx-auto">
-          <Button>Download Cv</Button>
-        </span>
-      </div>
-
-      {/* skills section */}
-
-      <div className="tw-flex tw-flex-col tw-p-14 tw-gap-10 ">
-        <h3 className="tw-mx-auto">My Skills</h3>
-        <p className="tw-mx-auto tw-font-normal tw-text-xl">
-          I have expertise in these skills and am continuously improving myself
-          to expand my skill set
-        </p>
-        <div className="tw-flex tw-flex-col tw-items-center md:tw-flex-row tw-gap-20 tw-justify-evenly">
-          {SkillsArray.map((skills, i) => (
-            <div
-              key={i}
-              className=" tw-flex tw-flex-col md:tw-flex-row tw-gap-10"
-            >
-              <Skills>
-                <h4>Front-End Skills</h4>
-                <div>
-                  {skills.frontEnd.map((skill, index) => (
-                    <li className="text-danger" key={index}>
-                      {skill}
-                    </li>
-                  ))}
-                </div>
-              </Skills>
-
-              <Skills>
-                <h4>Back-End Skills</h4>
-                <div>
-                  {skills.backEnd.map((skill, index) => (
-                    <li className="text-danger" key={index}>
-                      {skill}
-                    </li>
-                  ))}
-                </div>
-              </Skills>
+              <div className="tw-flex-col tw-flex md:tw-flex-row tw-gap-6">
+                <Button onClick={handleButtonNavigate}> Email Me </Button>
+                <Button onClick={handleButtonNavigate}> My Works</Button>
+              </div>
             </div>
-          ))}
+
+            <div className="tw-w-96 tw-flex tw-justify-center">
+              <img
+                className="md:tw-w-60 tw-w-72 tw-rounded-3xl md:tw-rounded-3xl"
+                src="\src\assets\images\me.jfif"
+                alt="my photo"
+              />
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* project section  */}
+        {/* about section */}
+        {/* <div style={{ backgroundColor: "" }} data-aos="zoom-in-right">
+          <About />
+        </div> */}
 
-      <div id="projects">
-        <ProjectSection></ProjectSection>
-      </div>
+        {/* resume section */}
 
-      {/* contact form  */}
-      <div>
-        <ContactForm></ContactForm>
-      </div>
-      <div>
-        <Footer />
+        <div className="tw-flex tw-flex-col tw-items-center bg-danger container tw-text-zinc-200">
+          <div className="tw-flex tw-flex-col tw-items-center">
+            <h3 className="tw-font-semibold ">My Experiences</h3>
+            <p>
+              Navigating diverse environments with adaptability and expertise
+              for holistic solutions.
+            </p>
+          </div>
+
+          <div className="tw-flex md:tw-flex-wrap tw-justify-center  flex-wrap ">
+            <Resume />
+          </div>
+        </div>
+
+        {/* skills section */}
+
+        <div className="container bg-danger ">
+          <div className="tw-flex tw-text-md tw-flex-col tw-gap-10  tw-text-zinc-200 ">
+            <h3 className="tw-mx-auto">My Skills</h3>
+            <p className="tw-mx-auto tw-font-normal">
+              I have expertise in these skills and am continuously improving
+              myself to expand my skill set
+            </p>
+
+            <div className="tw-grid tw-grid-cols-3 tw-place-self-center tw-gap-5">
+              {SkillsArray.map((skill, index) => (
+                <Skills key={index} data={skill} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* project section  */}
+
+        <div className="container bg-danger" ref={sectionRef} id="projects">
+          <ProjectSection></ProjectSection>
+        </div>
+
+        {/* contact form  */}
+        <div className="tw-flex bg-danger tw-flex-col tw-items-center container">
+          <h2>Contact Me</h2>
+          <ContactForm></ContactForm>
+        </div>
+        <div>
+          <Footer />
+        </div>
       </div>
     </>
   );

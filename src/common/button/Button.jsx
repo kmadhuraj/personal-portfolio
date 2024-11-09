@@ -1,11 +1,17 @@
-import React, { Children } from 'react'
-
-export default function Button({children}) {
+import React, { Children } from "react";
+import { motion } from 'framer-motion';
+export default function Button({ children, onClick }) {
   return (
-   <>
-        <button className='tw-border-neutral-50 tw-border-none tw-w-40 tw-rounded-md tw-h-10 tw-bg-violet-500 hover:tw-bg-violet-600 tw-active:bg-violet-700 focus:tw-outline-none focus:tw-ring  focus:tw-ring-violet-300 tw-p-2'>
-          {children}
-        </button>
-   </>
-  )
+    <>
+      <motion.button
+        onClick={onClick}
+        className="tw-w-40 tw-border-none tw-rounded-md  tw-h-10 tw-bg-zinc-700 hover:tw-bg-gray-500 hover:tw-text-white tw-uppercase focus:tw-animate-scramble "
+        whileHover={{ scale: 1.2 }}
+        onHoverStart={e => {}}
+        onHoverEnd={e => {}}
+      >
+        {children}
+      </motion.button>
+    </>
+  );
 }
