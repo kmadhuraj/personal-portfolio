@@ -1,31 +1,35 @@
 import React from "react";
 import ProjectCard from "../projects/ProjectCard";
+import sms from "../../../assets/images/spam.png"
+import invoice from "../../../assets/images/invoice.png";
+import netflix from "../../../assets/images/netflix.png";
+import student from "../../../assets/images/student.png"
 export default function ProjectSection() {
   const projects = [
     {
       title: "Invoice Management System",
       description:
         "An Invoice Management System built using PHP and XAMPP, designed to streamline the process of generating and printing invoices for product purchases.",
-      image:
-        "src/assets/images/invoice.png",
+      image:invoice
+        
     },
     {
       title: "SMS Spam Detection System ",
       description:
         "An SMS Spam Detection System leveraging LSTM (Long Short-Term Memory) deep learning techniques, developed with the Flask framework.",
-      image: "src/assets/images/spam.png",
+      image: sms
     },
     {
       title: "Netflix Clone",
       description:
         "A Netflix clone built with React, featuring a user-friendly interface to browse, search, and view movies and TV shows. ",
-      image: "src/assets/images/netflix.png",
+      image: netflix
     },
     {
       title: "Student Registration System ",
       description:
         "A Student Registration System developed with React and ASP.NET Web API, designed to manage student data efficiently.",
-      image: "src/assets/images/student.png",
+      image: student
     },
   ];
   return (

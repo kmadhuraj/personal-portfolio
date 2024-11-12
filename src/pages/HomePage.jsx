@@ -25,9 +25,11 @@ import js from "../assets/images/javascript-1.svg";
 import git from "../assets/images/Git.png";
 import tailwind from "../assets/images/Tailwind.png";
 import bootstrap from "../assets/images/bootstrap-icons.png";
+import myImg from "./../assets/images/me.jfif"
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-// import GoogleFontLoader from 'react-google-fonts';
+
+
 export default function HomePage() {
   //useref is used to access the project section
   const sectionRef = useRef(null);
@@ -119,7 +121,7 @@ export default function HomePage() {
             <div className="tw-w-80 tw-flex tw-justify-center">
               <img
                 className="md:tw-w-60 tw-w-72 tw-rounded-3xl md:tw-rounded-3xl"
-                src="\src\assets\images\me.jfif"
+                src={myImg}
                 alt="my photo"
               />
             </div>
