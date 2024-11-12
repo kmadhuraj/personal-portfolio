@@ -10,27 +10,31 @@ export default function ProjectSection() {
       title: "Invoice Management System",
       description:
         "An Invoice Management System built using PHP and XAMPP, designed to streamline the process of generating and printing invoices for product purchases.",
-      image:invoice
+      image:invoice,
+      link:"https://github.com/kmadhuraj/Invoice-and-billing-system"
         
     },
     {
       title: "SMS Spam Detection System ",
       description:
         "An SMS Spam Detection System leveraging LSTM (Long Short-Term Memory) deep learning techniques, developed with the Flask framework.",
-      image: sms
+      image: sms,
+      link:"https://github.com/kmadhuraj/sms_spam_detection"
     },
     {
       title: "Netflix Clone",
       description:
         "A Netflix clone built with React, featuring a user-friendly interface to browse, search, and view movies and TV shows. ",
-      image: netflix
+      image: netflix,
+      link:"https://github.com/kmadhuraj/Netflix-clone"
     },
     {
       title: "Student Registration System ",
       description:
         "A Student Registration System developed with React and ASP.NET Web API, designed to manage student data efficiently.",
-      image: student
-    },
+      image: student,
+      link:"https://github.com/kmadhuraj/Student-management-system-react"
+    }
   ];
   return (
     <>
@@ -47,6 +51,7 @@ export default function ProjectSection() {
               title={project.title}
               description={project.description}
               image={project.image}
+              link={project.link}
             />
           ))}
         </div>

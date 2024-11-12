@@ -17,11 +17,12 @@ export default function Resume({ period, department, institute, para }) {
       roleDescription:
         "Responsible for developing and maintaining web applications.",
       responsibilities: [
-        "Developed reusable components in React to enhance frontend efficiency.",
-        "Implemented CI/CD pipelines in Azure DevOps.",
+        "Participated in continuous learning opportunities to stay current with emerging technologies like docker, Azure DevOps and kubernetes",
+        "Built RESTful web API’s using ASP .Net Core frameworks ",
+        "Developed reusable components in React to enhance frontend efficiency. ",
         "Collaborated with cross-functional teams to design new features.",
       ],
-      technologies: ["React", "ASP.NET Core", "Azure DevOps", "Git"],
+      technologies: ["React", "ASP.NET Core",  "Git"],
       image: ults,
     },
     {
@@ -31,11 +32,11 @@ export default function Resume({ period, department, institute, para }) {
       roleDescription:
         "Assisted in the development of RESTful APIs and frontend interfaces.",
       responsibilities: [
-        "Developed API endpoints in ASP.NET Web API.",
+        "Learned React.js ,Built dynamic and responsive components.",
         "Created UI components with React and Bootstrap.",
         "Performed code reviews and tested applications for bugs.",
       ],
-      technologies: ["ASP.NET Web API", "React", "Bootstrap", "Git"],
+      technologies: ["React", "Bootstrap", "Git","Tailwind CSS"],
       image: brq,
     },
   ];

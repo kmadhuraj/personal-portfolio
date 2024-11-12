@@ -136,7 +136,7 @@ export default function HomePage() {
         {/* resume section */}
 
         <div className="tw-flex tw-flex-col tw-items-center  container tw-text-zinc-200">
-          <div className="tw-flex tw-flex-col tw-items-start md:tw-items-center">
+          <div className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center">
             <h3 className="tw-font-semibold ">My Experiences</h3>
             <p>
               Navigating diverse environments with adaptability and expertise
@@ -152,8 +152,10 @@ export default function HomePage() {
         {/* skills section */}
 
         <div className="container ">
-          <div className="tw-flex tw-text-md tw-flex-col tw-gap-10  tw-text-zinc-200 ">
-            <div className="tw-flex tw-flex-col tw-items-start md:tw-items-center">
+          <div className="tw-flex tw-text-md tw-flex-col tw-gap-10 tw-items-center tw-text-zinc-200 ">
+            <div className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center">
+            {/* tw-flex tw-flex-col tw-w-72 tw-items-start md:tw-items-center */}
+                         
               <h3 className="">My Skills</h3>
               <p className="tw-mx-auto tw-font-normal">
                 I have expertise in these skills and am continuously improving
@@ -171,8 +173,9 @@ export default function HomePage() {
 
         {/* project section  */}
 
-        <div className="container " ref={sectionRef} id="projects">
-          <div className="tw-flex tw-flex-col tw-items-start md:tw-items-center">
+        <div className="container tw-flex tw-flex-col tw-items-center" ref={sectionRef} id="projects">
+        {/* tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center */}
+          <div className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center">
             <h3 className=" tw-mb-8">Projects</h3>
             <p>
               Explore some of my recent projects that showcase my skills and

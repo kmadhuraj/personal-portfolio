@@ -4,7 +4,8 @@ import AOS from "aos";
 import "../../../App.css";
 import "aos/dist/aos.css";
 import Button from "../../../common/button/Button";
-export default function ProjectCard({ title, description, image }) {
+import { Link } from "react-router-dom";
+export default function ProjectCard({ title, description, image,link }) {
   useEffect(() => {
     AOS.init({
       once: true,
@@ -46,9 +47,11 @@ export default function ProjectCard({ title, description, image }) {
               className="tw-border tw-bg-zinc-600 tw-w-auto"
             ></div>
             {/* horizontal line */}
+            <Link to={link}>
             <button className="mt-4 tw-rounded-lg tw-w-28 tw-h-10 tw-border tw-text-blue-500 tw-font-medium hover:tw-bg-transparent hover:tw-border-red-500 hover:tw-text-blue-700">
               GitHub
             </button>
+            </Link>
           </div>
         </div>
       </div>
