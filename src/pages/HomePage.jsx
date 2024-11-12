@@ -25,6 +25,8 @@ import js from "../assets/images/javascript-1.svg";
 import git from "../assets/images/Git.png";
 import tailwind from "../assets/images/Tailwind.png";
 import bootstrap from "../assets/images/bootstrap-icons.png";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 // import GoogleFontLoader from 'react-google-fonts';
 export default function HomePage() {
   //useref is used to access the project section
@@ -89,13 +91,12 @@ export default function HomePage() {
         <div className="tw-flex tw-justify-center tw-p-10">
           <div
             id="home"
-            className=" tw-flex tw-flex-col  bg- md:tw-flex-row tw-items-center  md:tw-justify-evenly  md:tw-items-center"
+            className=" tw-flex tw-flex-col tw-gap-5 md:tw-flex-row tw-items-center  md:tw-justify-evenly  md:tw-items-center"
           >
-            <div className="tw-flex tw-items-center tw-flex-col tw-w-96  md:tw-items-start tw-text-zinc-200">
-              <p className="tw-text-lg fw-light text-uppercase">Hi There!</p>
-
+            <div className="tw-flex tw-items-center tw-flex-col tw-w-72 md:tw-w-96  md:tw-items-start tw-text-zinc-200">
               {/* animation typing  */}
-              <div className="">
+              <div className=" tw-flex-col">
+                <p className="tw-text-lg fw-light text-uppercase">Hi There!</p>
                 <h3 className="tw-text-2xl w-100 fw-bold text-uppercase">
                   MADHURAJ K
                 </h3>
@@ -108,12 +109,14 @@ export default function HomePage() {
               </div>
 
               <div className="tw-flex-col tw-flex md:tw-flex-row tw-gap-6">
-                <Button onClick={handleButtonNavigate}> Email Me </Button>
+                <Link to="mailto:madhurajofficail7@gmail.com">
+                  <Button> Email Me </Button>
+                </Link>
                 <Button onClick={handleButtonNavigate}> My Works</Button>
               </div>
             </div>
 
-            <div className="tw-w-96 tw-flex tw-justify-center">
+            <div className="tw-w-80 tw-flex tw-justify-center">
               <img
                 className="md:tw-w-60 tw-w-72 tw-rounded-3xl md:tw-rounded-3xl"
                 src="\src\assets\images\me.jfif"
@@ -130,8 +133,8 @@ export default function HomePage() {
 
         {/* resume section */}
 
-        <div className="tw-flex tw-flex-col tw-items-center bg-danger container tw-text-zinc-200">
-          <div className="tw-flex tw-flex-col tw-items-center">
+        <div className="tw-flex tw-flex-col tw-items-center  container tw-text-zinc-200">
+          <div className="tw-flex tw-flex-col tw-items-start md:tw-items-center">
             <h3 className="tw-font-semibold ">My Experiences</h3>
             <p>
               Navigating diverse environments with adaptability and expertise
@@ -146,15 +149,17 @@ export default function HomePage() {
 
         {/* skills section */}
 
-        <div className="container bg-danger ">
+        <div className="container ">
           <div className="tw-flex tw-text-md tw-flex-col tw-gap-10  tw-text-zinc-200 ">
-            <h3 className="tw-mx-auto">My Skills</h3>
-            <p className="tw-mx-auto tw-font-normal">
-              I have expertise in these skills and am continuously improving
-              myself to expand my skill set
-            </p>
+            <div className="tw-flex tw-flex-col tw-items-start md:tw-items-center">
+              <h3 className="">My Skills</h3>
+              <p className="tw-mx-auto tw-font-normal">
+                I have expertise in these skills and am continuously improving
+                myself to expand my skill set
+              </p>
+            </div>
 
-            <div className="tw-grid tw-grid-cols-3 tw-place-self-center tw-gap-5">
+            <div className="tw-grid lg:tw-grid-cols-3 md:tw-grid-cols-2 tw-gap-5 md:tw-gap-5 tw-place-self-center ">
               {SkillsArray.map((skill, index) => (
                 <Skills key={index} data={skill} />
               ))}
@@ -164,12 +169,19 @@ export default function HomePage() {
 
         {/* project section  */}
 
-        <div className="container bg-danger" ref={sectionRef} id="projects">
+        <div className="container " ref={sectionRef} id="projects">
+          <div className="tw-flex tw-flex-col tw-items-start md:tw-items-center">
+            <h3 className=" tw-mb-8">Projects</h3>
+            <p>
+              Explore some of my recent projects that showcase my skills and
+              experience across various technologies and frameworks.
+            </p>
+          </div>
           <ProjectSection></ProjectSection>
         </div>
 
         {/* contact form  */}
-        <div className="tw-flex bg-danger tw-flex-col tw-items-center container">
+        <div className="tw-flex tw-flex-col tw-items-center container">
           <h2>Contact Me</h2>
           <ContactForm></ContactForm>
         </div>

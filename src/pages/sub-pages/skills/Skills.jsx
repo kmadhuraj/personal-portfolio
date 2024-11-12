@@ -26,10 +26,10 @@ export default function Skills({ data }) {
   return (
     <>
       <div
-        data-aos="zoom-in-right"
+        data-aos="fade-up"
+        data-aos-duration="1000"
         className="tw-flex tw-justify-evenly tw-items-center tw-box-border tw-h-16 tw-w-60 tw-rounded-2xl tw-bg-neutral-900 hover:tw-bg-neutral-800 hover:tw-transition-all tw-delay-75"
       >
-        
         <div className="tw-w-12 tw-h-12 tw-flex tw-justify-center tw-items-center  tw-rounded-lg tw-bg-neutral-800">
           <img
             className="tw-w-10  tw-rounded-lg"
@@ -41,7 +41,7 @@ export default function Skills({ data }) {
         <div className="">
           <h5 className="tw-text-base tw-w-28 ">{data.skill}</h5>
         </div>
-        
+
         {/* <FontAwesomeIcon className="fa-beat" size="2x" icon={faArrowAltCircleRight} /> */}
       </div>
     </>

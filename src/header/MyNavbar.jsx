@@ -33,7 +33,7 @@ export default function MyNavbar() {
                 >
                   Home
                 </Link>
-                <Link
+                {/* <Link
                   className="nav-link"
                   to="about"
                   spy={true}
@@ -42,7 +42,7 @@ export default function MyNavbar() {
                   duration={100}
                 >
                   About me
-                </Link>
+                </Link> */}
                 <Link
                   className="nav-link"
                   to="projects"

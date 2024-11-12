@@ -3,7 +3,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ults from "../../../assets/images/ults.png";
 import brq from "../../../assets/images/brq.png";
+import "../../../App.css"
 export default function Resume({ period, department, institute, para }) {
+
+  const myStyle={
+   screen
+  }
   const experiences = [
     {
       jobTitle: "Software Engineer",
@@ -46,16 +51,18 @@ export default function Resume({ period, department, institute, para }) {
   return (
     <>
       <div  >
-        <section data-aos="zoom-in-right" className="tw-py-8  ">
+        <section className="tw-py-8  ">
           {experiences.map((experience, index) => (
             //this is the experience card -- start
 
             <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
               key={index}
               style={{ backgroundColor: "#0a0a0b" }}
               className="tw-flex tw-flex-col tw-p-6 tw-text-zinc-200 tw-gap-6 tw-mb-6  tw-rounded-lg"
             >
-              <div className="tw-flex tw-items-center tw-justify-between">
+              <div className="tw-flex tw-flex-col md:tw-flex-row tw-items-center tw-justify-between">
                 <div className="tw-flex tw-gap-3 tw-items-center">
                   <img
                     className="tw-w-10 tw-h-10 tw-rounded-xl"
@@ -69,8 +76,9 @@ export default function Resume({ period, department, institute, para }) {
               </div>
 
               <div
-                style={{ width: "700px" }}
-                className="tw-flex tw-bg-black tw-flex-col  tw-justify-center tw-text-zinc-200 tw-h-auto tw-rounded-md tw-p-5"
+                // style={{ width: "700px" }}
+                
+                className="responsive tw-flex tw-bg-black tw-flex-col   tw-justify-center tw-text-zinc-200 tw-h-auto tw-rounded-md tw-p-5"
               >
 
                 <h5 className="">{experience.jobTitle}</h5>

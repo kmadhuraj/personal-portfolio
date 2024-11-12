@@ -74,77 +74,81 @@ export default function ContactForm() {
 
   return (
     <>
-      <section data-aos="zoom-in-right" className="tw-py-12 "  id="contact">
-       
+      <section
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="tw-py-12 "
+        id="contact"
+      >
         <div className="  tw-mx-auto px-5 max-w-lg">
           <h2 className="mb-8">I Love to here from you.</h2>
           <p>Connect with Me Today. Let's Create Something Amazing Together!</p>
-       
-          <div className="tw-flex tw-gap-5"> 
-          <form
-            // ref={form}
-            style={{ width: "400px" }}
-            onSubmit={handleSubmit}
-            className="shadow-md rounded  px-8 pt-6 pb-8 mb-4"
-          >
-            <div className="tw-flex tw-gap-5">
-              <div className="mb-4 w-50">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Name *"
-                  className="shadow appearance-none border rounded w-100  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  required
-                />
-              </div>
-              <div className="mb-4 w-50">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  placeholder="Email *"
-                  onChange={handleChange}
-                  className="shadow appearance-none border w-100 rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  required
-                />
-              </div>
-            </div>
-            <div className="mb-6 w-100 ">
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                placeholder="Message"
-                onChange={handleChange}
-                className="shadow appearance-none w-100 tw-h-24 border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                required
-              />
-            </div>
-            <div className=" tw-mt-5 tw-flex w-100 tw-items-center tw-justify-start ">
-              <Button
-                type="submit"
-                className="tw-bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              >
-                Send Message
-              </Button>
-            </div>
 
-            {timer && (
-              <p className="tw-text-lg text-success text-center mt-4">
-                {SuccesMsg}
-                {}
-              </p>
-            )}
-          </form>
-          <div className="tw-flex tw-flex-col tw-gap-5 tw-mb-5">
-            {SocialArray.map((social, i) => (
-              <StyledButton key={i} data={social}></StyledButton>
-            ))}
-          </div>
+          <div className="tw-flex tw-flex-col-reverse md:tw-flex-row tw-gap-5">
+            <form
+              // ref={form}
+              // style={{ width: "400px" }}
+              onSubmit={handleSubmit}
+              className="shadow-md rounded  px-8 pt-6 pb-8 mb-4"
+            >
+              <div className="tw-flex tw-gap-5">
+                <div className="mb-4 w-50 ">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Name *"
+                    className="shadow appearance-none border rounded tw-w-full  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    required
+                  />
+                </div>
+                <div className="mb-4 w-50">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    placeholder="Email *"
+                    onChange={handleChange}
+                    className="shadow appearance-none border tw-w-full  rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="mb-6 w-100 ">
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  placeholder="Message"
+                  onChange={handleChange}
+                  className="shadow appearance-none tw-w-full  tw-h-24 border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  required
+                />
+              </div>
+              <div className=" tw-mt-5 tw-flex w-100 tw-items-center tw-justify-start ">
+                <Button
+                  type="submit"
+                  className="tw-bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
+                  Send Message
+                </Button>
+              </div>
+
+              {timer && (
+                <p className="tw-text-lg text-success text-center mt-4">
+                  {SuccesMsg}
+                  {}
+                </p>
+              )}
+            </form>
+            <div className="tw-flex tw-flex-col tw-gap-5 tw-mb-5">
+              {SocialArray.map((social, i) => (
+                <StyledButton key={i} data={social}></StyledButton>
+              ))}
+            </div>
           </div>
         </div>
       </section>
