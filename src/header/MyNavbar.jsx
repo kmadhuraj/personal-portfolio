@@ -1,18 +1,32 @@
 import React from "react";
-import "../App.css"
+import "../App.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-scroll";
+import { useState } from "react";
 export default function MyNavbar() {
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
+
+  const handleClose = () => setShowOffcanvas(false);
+  const handleShow = () => setShowOffcanvas(true);
+
   return (
     <>
-      <Navbar style={{fontFamily:"Space Grotesk,serif",fontWeight:"500"}} bg="dark" expand="lg" className="" data-bs-theme="dark">
+      <Navbar
+        style={{ fontFamily: "Space Grotesk,serif", fontWeight: "500" }}
+        bg="dark"
+        expand="lg"
+        className=""
+        data-bs-theme="dark"
+      >
         <Container>
           <Navbar.Brand href="#home">Madhuraj</Navbar.Brand>
-          <Navbar.Toggle aria-controls="offcanvasNavbar" />
+          <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleShow} />
           <Navbar.Offcanvas
+            show={showOffcanvas}
+            onHide={handleClose}
             className="offcanvas-fullwidth tw-bg-neutral-400"
             // tabindex="1"
             // id="offcanvasTop"
