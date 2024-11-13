@@ -37,8 +37,8 @@ export default function HomePage() {
   // const navigate = useNavigate();
   useEffect(() => {
     AOS.init({
-      once: true,
-      disable: "phone",
+      // once: true,
+      // disable: "phone",
       duration: 700,
       easing: "ease-out-cubic",
     });
@@ -90,7 +90,7 @@ export default function HomePage() {
         }}
         className="tw-text-zinc-200 tw-flex tw-flex-col tw-items-center tw-gap-20 "
       >
-        <div className="tw-flex tw-justify-center tw-p-10">
+        <div className="tw-flex tw-justify-center ">
           <div
             id="home"
             className=" tw-flex tw-flex-col tw-gap-5 md:tw-flex-row tw-items-center  md:tw-justify-evenly  md:tw-items-center"

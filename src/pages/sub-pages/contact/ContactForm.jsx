@@ -80,7 +80,7 @@ export default function ContactForm() {
         className="tw-py-12 "
         id="contact"
       >
-        <div className="  tw-mx-auto px-5 max-w-lg">
+        <div className="  tw-mx-auto max-w-lg">
           <h2 className="mb-8">I Love to here from you.</h2>
           <p>Connect with Me Today. Let's Create Something Amazing Together!</p>
 
