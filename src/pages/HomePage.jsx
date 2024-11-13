@@ -97,7 +97,7 @@ export default function HomePage() {
           >
             <div className="tw-flex tw-items-center tw-flex-col tw-w-72 md:tw-w-96  md:tw-items-start tw-text-zinc-200">
               {/* animation typing  */}
-              <div className=" tw-flex-col">
+              <div className=" tw-flex-col tw-mt-10">
                 <p className="tw-text-lg fw-light text-uppercase">Hi There!</p>
                 <h3 className="tw-text-2xl w-100 fw-bold text-uppercase">
                   MADHURAJ K
