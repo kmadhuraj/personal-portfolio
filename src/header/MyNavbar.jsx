@@ -13,16 +13,18 @@ export default function MyNavbar() {
           <Navbar.Brand href="#home">Madhuraj</Navbar.Brand>
           <Navbar.Toggle aria-controls="offcanvasNavbar" />
           <Navbar.Offcanvas
-            id="offcanvasNavbar"
+            className="offcanvas-fullwidth tw-bg-neutral-400"
+            // tabindex="1"
+            // id="offcanvasTop"
             aria-labelledby="offcanvasNavbarLabel"
-            placement="end"
+            placement="top"
           >
             <Offcanvas.Header closeButton>
-              <Offcanvas.Title id="offcanvasNavbarLabel">Menu</Offcanvas.Title>
+              <Offcanvas.Title id="offcanvasNavbarLabel ">Menu</Offcanvas.Title>
             </Offcanvas.Header>
 
             <Offcanvas.Body>
-              <Nav className="me-auto">
+              <Nav className="text-center">
                 <Link
                   className="nav-link"
                   to="home"

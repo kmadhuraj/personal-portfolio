@@ -128,7 +128,7 @@ export default function ContactForm() {
                   required
                 />
               </div>
-              <div className=" tw-mt-5 tw-flex w-100 tw-items-center tw-justify-start ">
+              <div className=" tw-mt-5 tw-flex w-100 tw-items-center tw-justify-center md:tw-justify-start ">
                 <Button
                   type="submit"
                   className="tw-bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
