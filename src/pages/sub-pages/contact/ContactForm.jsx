@@ -77,7 +77,7 @@ export default function ContactForm() {
       <section
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="tw-py-12 "
+        className="tw-py-12 tw-w-72 md:tw-w-auto "
         id="contact"
       >
         <div className="  tw-mx-auto max-w-lg">
@@ -144,7 +144,7 @@ export default function ContactForm() {
                 </p>
               )}
             </form>
-            <div className="tw-flex tw-flex-col tw-gap-5 tw-mb-5">
+            <div className="tw-flex tw-flex-col tw-items-center tw-gap-5 tw-mb-5">
               {SocialArray.map((social, i) => (
                 <StyledButton key={i} data={social}></StyledButton>
               ))}
