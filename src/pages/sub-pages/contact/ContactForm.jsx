@@ -80,6 +80,7 @@ export default function ContactForm() {
         className="tw-py-8 tw-w-72 md:tw-w-auto "
         id="contact"
       >
+        <h2 className="md:tw-text-center tw-text-start tw-mb-4">Contact Me</h2>
         <div className="  tw-mx-auto max-w-lg">
           <h2 className="mb-8">I would be happy to hear from you</h2>
           <p>Connect with Me Today. Let's Create Something Amazing Together!</p>

@@ -215,7 +215,7 @@ export default function HomePage() {
               duration="1000"
               className="tw-flex tw-flex-col tw-items-center container"
             >
-              <h2>Contact Me</h2>
+              {/* <h2 className="md:tw-text-center tw-text-start">Contact Me</h2> */}
               <ContactForm></ContactForm>
             </div>
             <div className="tw-bg-zinc-700 tw-w-full">
