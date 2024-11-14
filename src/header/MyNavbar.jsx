@@ -50,16 +50,28 @@ export default function MyNavbar() {
                 >
                   Home
                 </Link>
-                {/* <Link
+                <Link
                   className="nav-link"
-                  to="about"
+                  to="experince"
                   spy={true}
                   smooth={true}
                   offset={50}
                   duration={100}
                 >
-                  About me
-                </Link> */}
+                  Experience
+                </Link>
+                
+
+                <Link
+                  className="nav-link"
+                  to="skill"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={100}
+                >
+                  Skills
+                </Link>
                 <Link
                   className="nav-link"
                   to="projects"

@@ -144,7 +144,7 @@ export default function HomePage() {
 
                   {/* resume section */}
 
-            <div className="tw-flex tw-flex-col tw-items-center  container tw-text-zinc-200">
+            <div id="experince" className="tw-flex tw-flex-col tw-items-center  container tw-text-zinc-200">
               <div
                 data-aos="fade-up"
                 duration="1000"
@@ -164,7 +164,7 @@ export default function HomePage() {
 
             {/* skills section */}
 
-            <div className="container ">
+            <div id="skill" className="container ">
               <div className="tw-flex tw-text-md tw-flex-col tw-gap-10 tw-items-center tw-text-zinc-200 ">
                 <div
                   data-aos="fade-up"
