@@ -17,7 +17,27 @@ export default function Footer() {
             >
               Home
             </Link>
+            <Link
+              className="nav-link"
+              to="experince"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={100}
+            >
+              Experience
+            </Link>
 
+            <Link
+              className="nav-link"
+              to="skill"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={100}
+            >
+              Skills
+            </Link>
             <Link
               className="tw-text-slate-100 tw-no-underline"
               to="projects"
