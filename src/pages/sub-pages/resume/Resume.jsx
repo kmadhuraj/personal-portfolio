@@ -13,7 +13,7 @@ export default function Resume({ period, department, institute, para }) {
     {
       jobTitle: "Software Engineer",
       company: "UL Technology Solutions",
-      date: "Jan 2023 - Present",
+      date: "Feb 2024 - Present",
       roleDescription:
         "Responsible for developing and maintaining web applications.",
       responsibilities: [
@@ -28,7 +28,7 @@ export default function Resume({ period, department, institute, para }) {
     {
       jobTitle: "Intern",
       company: "BRQ Glob Tech Pvt Ltd.",
-      date: "June 2022 - Dec 2022",
+      date: "Dec 2023 - Feb 2024",
       roleDescription:
         "Assisted in the development of RESTful APIs and frontend interfaces.",
       responsibilities: [

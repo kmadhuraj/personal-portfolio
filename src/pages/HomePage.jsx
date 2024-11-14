@@ -84,7 +84,7 @@ export default function HomePage() {
             }}
             className="tw-text-zinc-200 tw-flex tw-flex-col tw-items-center tw-gap-20 "
           >
-            <div className="tw-flex tw-justify-center md:tw-mt-10 tw-mt-10">
+            <div className="tw-flex tw-justify-center md:tw-mt-10 tw-mt-1o">
               <div
                 id="home"
                 className=" tw-flex tw-flex-col tw-gap-5 md:tw-flex-row tw-items-center   md:tw-justify-evenly  md:tw-items-center"
