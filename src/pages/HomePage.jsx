@@ -25,10 +25,9 @@ import js from "../assets/images/javascript-1.svg";
 import git from "../assets/images/Git.png";
 import tailwind from "../assets/images/Tailwind.png";
 import bootstrap from "../assets/images/bootstrap-icons.png";
-import myImg from "./../assets/images/me.jfif"
+import myImg from "./../assets/images/me.jfif";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
 
 export default function HomePage() {
   //useref is used to access the project section
@@ -37,11 +36,11 @@ export default function HomePage() {
   // const navigate = useNavigate();
   useEffect(() => {
     AOS.init({
-      // once: true,
-      // disable: "phone",
+      once: false,
       duration: 700,
       easing: "ease-out-cubic",
     });
+    AOS.refresh();
   }, []);
 
   const SkillsArray = [
@@ -81,7 +80,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Navbar></Navbar>
       <div
         style={{
           backgroundColor: "#0f0f0f",
@@ -90,7 +88,10 @@ export default function HomePage() {
         }}
         className="tw-text-zinc-200 tw-flex tw-flex-col tw-items-center tw-gap-20 "
       >
-        <div className="tw-flex tw-justify-center ">
+        <div className="position-fixed w-100 ">
+          <Navbar></Navbar>
+        </div>
+        <div className="tw-flex tw-justify-center tw-mt-20 ">
           <div
             id="home"
             className=" tw-flex tw-flex-col tw-gap-5 md:tw-flex-row tw-items-center  md:tw-justify-evenly  md:tw-items-center"
@@ -154,8 +155,8 @@ export default function HomePage() {
         <div className="container ">
           <div className="tw-flex tw-text-md tw-flex-col tw-gap-10 tw-items-center tw-text-zinc-200 ">
             <div className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center">
-            {/* tw-flex tw-flex-col tw-w-72 tw-items-start md:tw-items-center */}
-                         
+              {/* tw-flex tw-flex-col tw-w-72 tw-items-start md:tw-items-center */}
+
               <h3 className="">My Skills</h3>
               <p className="tw-mx-auto tw-font-normal">
                 I have expertise in these skills and am continuously improving
@@ -173,8 +174,12 @@ export default function HomePage() {
 
         {/* project section  */}
 
-        <div className="container tw-flex tw-flex-col tw-items-center" ref={sectionRef} id="projects">
-        {/* tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center */}
+        <div
+          className="container tw-flex tw-flex-col tw-items-center"
+          ref={sectionRef}
+          id="projects"
+        >
+          {/* tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center */}
           <div className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center">
             <h3 className=" tw-mb-8">Projects</h3>
             <p>

@@ -61,7 +61,7 @@ export default function Resume({ period, department, institute, para }) {
               data-aos-duration="1000"
               key={index}
               style={{ backgroundColor: "#0a0a0b" }}
-              className="tw-flex tw-flex-col tw-p-6 tw-text-zinc-200 tw-gap-6 tw-mb-6  tw-rounded-lg"
+              className="tw-flex tw-flex-col tw-p-6 tw-w-72 md:tw-w-auto tw-text-zinc-200 tw-gap-6 tw-mb-6  tw-rounded-lg"
             >
               <div className="tw-flex tw-flex-col md:tw-flex-row tw-items-center tw-justify-between">
                 <div className="tw-flex tw-gap-3 tw-items-center">
