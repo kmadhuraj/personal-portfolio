@@ -77,11 +77,11 @@ export default function ContactForm() {
       <section
         data-aos="fade-up"
         data-aos-duration="1000"
-        className="tw-py-12 tw-w-72 md:tw-w-auto "
+        className="tw-py-8 tw-w-72 md:tw-w-auto "
         id="contact"
       >
         <div className="  tw-mx-auto max-w-lg">
-          <h2 className="mb-8">I Love to here from you.</h2>
+          <h2 className="mb-8">I would be happy to hear from you</h2>
           <p>Connect with Me Today. Let's Create Something Amazing Together!</p>
 
           <div className="tw-flex tw-flex-col-reverse md:tw-flex-row tw-gap-5">

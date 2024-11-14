@@ -6,6 +6,7 @@ import ProjectSection from "./sub-pages/projects/ProjectSection";
 import ContactForm from "./sub-pages/contact/ContactForm";
 import Skills from "./sub-pages/skills/Skills";
 import Footer from "../footer/Footer";
+
 // import { TypeAnimation } from "react-type-animation";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -25,6 +26,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { faHand } from "@fortawesome/free-regular-svg-icons";
 import AosWrapper from "../common/AosWrapper";
+
 
 export default function HomePage() {
   //useref is used to access the project section
@@ -84,7 +86,7 @@ export default function HomePage() {
             }}
             className="tw-text-zinc-200 tw-flex tw-flex-col tw-items-center tw-gap-20 "
           >
-            <div className="tw-flex tw-justify-center md:tw-mt-10 tw-mt-1o">
+            <div className="tw-flex tw-justify-center md:tw-mt-10 tw-mt-10">
               <div
                 id="home"
                 className=" tw-flex tw-flex-col tw-gap-5 md:tw-flex-row tw-items-center   md:tw-justify-evenly  md:tw-items-center"
@@ -135,12 +137,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* about section */}
-            {/* <div style={{ backgroundColor: "" }} data-aos="zoom-in-right">
-          <About />
-        </div> */}
+                  {/* about section */}
+                  {/* <div style={{ backgroundColor: "" }} data-aos="zoom-in-right">
+                <About />
+              </div> */}
 
-            {/* resume section */}
+                  {/* resume section */}
 
             <div className="tw-flex tw-flex-col tw-items-center  container tw-text-zinc-200">
               <div
@@ -148,7 +150,7 @@ export default function HomePage() {
                 duration="1000"
                 className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center"
               >
-                <h3 className="tw-font-semibold ">My Experiences</h3>
+                <h3 className=" tw-mb-4 ">My Experiences</h3>
                 <p>
                   Navigating diverse environments with adaptability and
                   expertise for holistic solutions.
@@ -171,7 +173,7 @@ export default function HomePage() {
                 >
                   {/* tw-flex tw-flex-col tw-w-72 tw-items-start md:tw-items-center */}
 
-                  <h3 className="">My Skills</h3>
+                  <h3 className="tw-mb-4">My Skills</h3>
                   <p className="tw-mx-auto tw-font-normal">
                     I have expertise in these skills and am continuously
                     improving myself to expand my skill set
@@ -199,10 +201,9 @@ export default function HomePage() {
                 duration="1000"
                 className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center"
               >
-                <h3 className=" tw-mb-8">Projects</h3>
+                <h3 className="tw-mb-4">Projects</h3>
                 <p>
-                  Explore some of my recent projects that showcase my skills and
-                  experience across various technologies and frameworks.
+                Explore recent projects showcasing my skills across diverse technologies and frameworks.
                 </p>
               </div>
               <ProjectSection></ProjectSection>
@@ -221,6 +222,8 @@ export default function HomePage() {
               <Footer />
             </div>
           </div>
+
+          
         </div>
       </AosWrapper>
     </>
