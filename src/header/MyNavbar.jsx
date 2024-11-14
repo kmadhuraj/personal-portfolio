@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-scroll";
 import { useState,useEffect } from "react";
+// import { motion } from "framer-motion";
 export default function MyNavbar() {
 
 
@@ -17,7 +18,7 @@ export default function MyNavbar() {
         style={{ fontFamily: "Space Grotesk,serif", fontWeight: "500" }}
         bg="dark"
         expand="lg"
-        className=""
+        className="tw-fixed tw-w-full tw-top-0 tw-z-50 "
         data-bs-theme="dark"
         
       >
