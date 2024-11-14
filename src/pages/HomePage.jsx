@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "../App.css";
 import Navbar from "../header/MyNavbar";
-import About from "./sub-pages/about/About";
 import Resume from "./sub-pages/resume/Resume";
 import ProjectSection from "./sub-pages/projects/ProjectSection";
 import ContactForm from "./sub-pages/contact/ContactForm";
@@ -11,13 +10,7 @@ import { TypeAnimation } from "react-type-animation";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Button from "../common/button/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-//images for skills
+
 import dotnet from "../assets/images/aspdotnet.png";
 import react from "../assets/images/reactpng.png";
 import csharp from "../assets/images/c-sharp.png";
@@ -38,7 +31,7 @@ export default function HomePage() {
     AOS.init({
       once: false,
       duration: 700,
-      easing: "ease-out-cubic",
+      easing: "ease-out-cubic"
     });
     AOS.refresh();
   }, []);
@@ -80,23 +73,27 @@ export default function HomePage() {
 
   return (
     <>
+      <div style={{ willChange: "transform" }} className="position-sticky w-100 top-0 ">
+        <Navbar ></Navbar>
+      </div>
       <div
         style={{
           backgroundColor: "#0f0f0f",
           fontFamily: "Space Grotesk,serif",
           fontWeight: "500",
         }}
-        className="tw-text-zinc-200 tw-flex tw-flex-col tw-items-center tw-gap-20 "
+        className="tw-text-zinc-200 tw-flex tw-flex-col tw-items-center tw-gap-20"
       >
-        <div className="position-fixed w-100 ">
-          <Navbar></Navbar>
-        </div>
         <div className="tw-flex tw-justify-center tw-mt-20 ">
           <div
             id="home"
             className=" tw-flex tw-flex-col tw-gap-5 md:tw-flex-row tw-items-center  md:tw-justify-evenly  md:tw-items-center"
           >
-            <div className="tw-flex tw-items-center tw-flex-col tw-w-72 md:tw-w-96  md:tw-items-start tw-text-zinc-200">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className="tw-flex tw-items-center tw-flex-col tw-w-72 md:tw-w-96  md:tw-items-start tw-text-zinc-200"
+            >
               {/* animation typing  */}
               <div className=" tw-flex-col tw-mt-10">
                 <p className="tw-text-lg fw-light text-uppercase">Hi There!</p>
@@ -119,7 +116,11 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="tw-w-80 tw-flex tw-justify-center">
+            <div
+              data-aos="fade-right"
+              duration="1000"
+              className="tw-w-80 tw-flex tw-justify-center"
+            >
               <img
                 className="md:tw-w-60 tw-w-72 tw-rounded-3xl md:tw-rounded-3xl"
                 src={myImg}
@@ -137,7 +138,11 @@ export default function HomePage() {
         {/* resume section */}
 
         <div className="tw-flex tw-flex-col tw-items-center  container tw-text-zinc-200">
-          <div className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center">
+          <div
+            data-aos="fade-up"
+            duration="1000"
+            className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center"
+          >
             <h3 className="tw-font-semibold ">My Experiences</h3>
             <p>
               Navigating diverse environments with adaptability and expertise
@@ -154,7 +159,11 @@ export default function HomePage() {
 
         <div className="container ">
           <div className="tw-flex tw-text-md tw-flex-col tw-gap-10 tw-items-center tw-text-zinc-200 ">
-            <div className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center">
+            <div
+              data-aos="fade-up"
+              duration="1000"
+              className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center"
+            >
               {/* tw-flex tw-flex-col tw-w-72 tw-items-start md:tw-items-center */}
 
               <h3 className="">My Skills</h3>
@@ -180,7 +189,11 @@ export default function HomePage() {
           id="projects"
         >
           {/* tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center */}
-          <div className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center">
+          <div
+            data-aos="fade-up"
+            duration="1000"
+            className="tw-flex tw-flex-col tw-w-72 sm:tw-w-auto tw-items-start md:tw-items-center"
+          >
             <h3 className=" tw-mb-8">Projects</h3>
             <p>
               Explore some of my recent projects that showcase my skills and
@@ -191,11 +204,15 @@ export default function HomePage() {
         </div>
 
         {/* contact form  */}
-        <div className="tw-flex tw-flex-col tw-items-center container">
+        <div
+          data-aos="fade-up"
+          duration="1000"
+          className="tw-flex tw-flex-col tw-items-center container"
+        >
           <h2>Contact Me</h2>
           <ContactForm></ContactForm>
         </div>
-        <div>
+        <div className="tw-bg-zinc-700 tw-w-full">
           <Footer />
         </div>
       </div>

@@ -3,9 +3,9 @@ import { Link } from "react-scroll";
 export default function Footer() {
   return (
     <>
-      <div>
+      <div className="tw-my-10 ">
         <div className="">
-          <ul className="tw-flex tw-gap-5">
+          <ul className="tw-flex tw-gap-5 tw-justify-center">
             <Link
               className="tw-text-slate-100 tw-no-underline"
               to="home"
