@@ -6,7 +6,7 @@ export default function Footer() {
     <>
       <div className="tw-my-10 ">
         <div className="">
-          <ul className="tw-flex tw-gap-5 tw-justify-center tw-p-0">
+          <ul className="tw-flex tw-gap-5 tw-justify-center tw-flex-wrap tw-p-0">
             <Link
               className="tw-text-slate-100 tw-no-underline"
               to="home"
